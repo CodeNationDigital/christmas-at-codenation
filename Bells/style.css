@@ -1,0 +1,94 @@
+img {
+  position: relative;
+  right: 20px;
+  height: 100px;
+}
+
+.bell-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center;
+}
+
+.bell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* border: 1px solid gold; */
+  padding: 5px;
+  margin: 5px;
+}
+
+.bell img {
+  transform-origin: top;
+  transform: rotate(-12deg);
+}
+
+.ring-bell {
+  animation-name: ring;
+  animation-duration: 0.4s;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(-12deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* 
+.ring-bell-left {
+  animation-name: ringLeft;
+  animation-duration: 0.4s;
+}
+
+@keyframes ringLeft {
+  0% {
+    transform: rotate(-24deg);
+  }
+
+  20% {
+    transform: rotate(-12deg);
+  }
+
+  100% {
+    transform: rotate(-24deg);
+  }
+} */
+
+.keys {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.press-key {
+  animation-name: keypress;
+  animation: 0.4s;
+  background: tomato;
+}
+
+@keyframes keypress {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+
+  padding-top: 10px;
+  margin-top: 10px;
+}

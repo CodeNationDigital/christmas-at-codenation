@@ -1,0 +1,17 @@
+#board {
+  border: 1px solid black;
+  height: 800px;
+  width: 800px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.oddSquare {
+  background-color: thistle;
+}
+
+.square {
+  height: 80px;
+  width: 80px;
+}

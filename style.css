@@ -2,6 +2,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-color: #060507;
 }
 
 body {
@@ -9,10 +10,14 @@ body {
 }
 
 .sky {
-  height: 100%;
-  background: none repeat scroll 0 0 #060507;
+  position: absolute;
   color: #fff;
   padding: 12px;
   font-family: Helvetica;
-  display: block;
+}
+
+#canvas{
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }

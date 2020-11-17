@@ -1,0 +1,62 @@
+body{
+    background-image: url('./images/christmasBackground.jpg');
+}
+
+canvas{
+  border: 2px solid black;
+  background-color: white;
+}
+.gameWrap{
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+}
+p{
+    font-family: futura;
+    width: 644px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    background-color: white;
+}
+
+.header{
+  height: 55px;
+  display: flex;
+  flex-direction: row;
+  font-family: futura;
+  font-size: 10px;
+  background-color: white;
+  padding: 0px 0px 0px 20px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+#score{
+  margin: auto 20px auto 10px;
+}
+#highscore{
+  margin: auto 20px auto 10px;
+}
+#start{
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, calc(-50% + 27.5px));
+  height: 100px;
+  width: 200px;
+  background-color: #00d0ff;
+  border-radius: 30px;
+  border: 5px solid #00a6ff;
+  font-family: futura;
+  font-size: 30px;
+}
+
+img{
+    display: none;
+}

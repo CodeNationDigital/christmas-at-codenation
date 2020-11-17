@@ -1,17 +1,14 @@
 var particleCount = 300;
 var particleMax = 1000;
 var sky = document.querySelector(".sky");
-var canvas = document.createElement("canvas");
+var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-var width = sky.clientWidth;
-var height = sky.clientHeight;
+var width = innerWidth;
+var height = innerHeight;
 var i = 0;
 var active = false;
 var snowflakes = [];
 var snowflake;
-
-canvas.style.position = "absolute";
-canvas.style.left = canvas.style.top = "0";
 
 var Snowflake = function () {
   this.x = 0;
@@ -70,8 +67,8 @@ function update() {
 }
 
 function onResize() {
-  width = sky.clientWidth;
-  height = sky.clientHeight;
+  width = innerWidth;
+  height = innerHeight;
   canvas.width = width;
   canvas.height = height;
   ctx.fillStyle = "#FFF";
@@ -99,7 +96,7 @@ window.requestAnimFrame = (function () {
 onResize();
 window.addEventListener("resize", onResize, false);
 
-sky.appendChild(canvas);
+// sky.appendChild(canvas);
 
 // var gui = new dat.GUI();
 // gui

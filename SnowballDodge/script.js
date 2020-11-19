@@ -9,20 +9,29 @@ let mouseY = 0
 let growing = false
 let radius = 10
 let santas = []
+let projectiles = []
 let level = 1
 
 const santa = new Image();
 santa.src = "./images/santa.png"
 
+window.addEventListener('touchmove', function(e){
+    mouseX = e.touches[0].clientX
+    mouseY = e.touches[0].clientY
+})
 window.addEventListener('mousemove', function(e){
     mouseX = e.x
     mouseY = e.y
 })
-window.addEventListener('mousedown', function(){
+window.addEventListener('mousedown', placeSanta)
+window.addEventListener('touchstart', function(e){
+    mouseX = e.touches[0].clientX
+    mouseY = e.touches[0].clientY
     growing = true
     santas.push({ x: mouseX, y: mouseY, radius: radius, growing: true})
 })
 window.addEventListener('mouseup', dropSanta)
+window.addEventListener('touchend', dropSanta)
 
 class Projectile {
     constructor(x, y, radius, color, velocity) {
@@ -52,12 +61,10 @@ class Projectile {
         this.y = this.y + (this.velocity.y)
     }
 }
-  
-const projectiles = []
-
-projectiles.push(new Projectile(Math.random() * innerWidth, Math.random() * innerHeight, 10, 'white', {x: (Math.random() - 0.5) * 10, y: (Math.random() - 0.5) * 10}))
-projectiles.push(new Projectile(Math.random() * innerWidth, Math.random() * innerHeight, 10, 'white', {x: (Math.random() - 0.5) * 10, y: (Math.random() - 0.5) * 10}))
-projectiles.push(new Projectile(Math.random() * innerWidth, Math.random() * innerHeight, 10, 'white', {x: (Math.random() - 0.5) * 10, y: (Math.random() - 0.5) * 10}))
+function placeSanta() {
+    growing = true
+    santas.push({ x: mouseX, y: mouseY, radius: radius, growing: true})
+}
 
 function dropSanta() {
     if(growing){
@@ -126,7 +133,7 @@ function animate() {
     c.font = "20px Arial";
     c.fillStyle = "black";
     c.fillText(`Level: ${level}`, 50, 50);
-    c.fillText(`Score: ${(score/(innerWidth * innerHeight)) * 100}%`, 50, 80);
+    c.fillText(`Score: ${Math.round((score/(innerWidth * innerHeight)) * 100)}%`, 50, 80);
 
     for(let i = 0; i < projectiles.length; i++){
         // each projectile is i
@@ -151,4 +158,21 @@ function animate() {
     }
 }
 
+function init(){
+    santas = []
+    projectiles = []
+
+    for(i = 0; i < 3; i++){
+        projectiles.push(new Projectile(Math.random() * innerWidth, Math.random() * innerHeight, 10, 'white', {x: (Math.random() - 0.5) * 10, y: (Math.random() - 0.5) * 10}))
+    }
+}
+
+window.addEventListener('resize', function() {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+    
+    init()
+})
+
+init()
 animate()

@@ -1,28 +1,30 @@
 body{
-    background-image: url('./images/christmasBackground.jpg');
+  background-image: url('./images/christmasBackground.jpg');
+  overflow: hidden;
 }
 
+.gameWrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 canvas{
   border: 2px solid black;
   background-color: white;
 }
-.gameWrap{
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
-}
+
 p{
-    font-family: futura;
-    width: 644px;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 10px 20px;
-    text-align: center;
-    border-top: 2px solid black;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    background-color: white;
+  font-family: futura;
+  width: 644px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 20px;
+  text-align: center;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  background-color: white;
 }
 
 .header{
@@ -58,5 +60,56 @@ p{
 }
 
 img{
+  display: none;
+}
+#buttonControls{
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  .gameWrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  p{
     display: none;
+  }
+  #buttonControls{
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    height: 300px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: white;
+  }
+  .directionButton{
+    height: 100%;
+    width: 100%;
+    font-size: 50px;
+    border-radius: 1px;
+    background-color: rgba(255, 0, 0, 0.3);
+  }
+  #up{
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  #left{
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  #right{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  #down{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+  }
 }

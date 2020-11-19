@@ -6,10 +6,10 @@ const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
 const santaHat = new Image();
-santaHat.src = "/images/santaHat.png";
+santaHat.src = "./images/santaHat.png";
 
 const foodImg = new Image();
-foodImg.src = "/images/present.png";
+foodImg.src = "./images/present.png";
 
 const box = 40;
 
@@ -33,8 +33,8 @@ let food = {
 
 document.addEventListener('keydown', function(e) {
   let key = e.keyCode
-  if(key === 37 && direction != 'right'){
-    direction = 'left'
+  if(key === 37 && direction != "right"){
+    direction = "left"
   } else if(key == 38 && direction != "down"){
     direction = "up";
   } else if(key == 39 && direction != "left"){
@@ -117,4 +117,17 @@ function reset() {
     y: 7 * box
   }
   game()
+}
+
+function myFunction(newDirection) {
+  console.log(newDirection)
+  if(newDirection == "right" && direction != "left"){
+    direction = newDirection
+  } else if(newDirection == "left" && direction != "right"){
+    direction = newDirection
+  } else if(newDirection == "up" && direction != "down"){
+    direction = newDirection
+  } else if(newDirection == "down" && direction != "up"){
+    direction = newDirection
+  }
 }

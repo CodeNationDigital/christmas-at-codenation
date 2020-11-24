@@ -10,7 +10,10 @@ let counter = 0
 let jokes =[{Q: "What do you call a blind reindeer?" ,A: "No-eye deer."}, {Q: "Why are mummies such big fans of Christmas?" ,A: "Because they enjoy wrapping."}, {Q: "Why did Santa have to go to the hospital?" ,A: "Because of his poor elf."}, {Q: "What do you get when you cross a snowman with a vampire?" ,A: "Frostbite."}, {Q: "Why did no-one bid for Rudolph and Blitzen on eBay?" ,A: "Because they were two deer."}, {Q: "What do you call an old snowman?" ,A: "Water."}, {Q: "What do snowmen have for breakfast?" ,A: "Snowflakes!"}, {Q: "What is white and minty?" ,A: "A polo bear!"}, {Q: "Who is a Christmas tree’s favorite singer?" ,A: "Spruce Springsteen!"}, {Q: "Why don’t penguins fly?" ,A: "Because they’re not tall enough to be pilots!"}]
 let num = Math.floor(Math.random() * jokes.length)
 
-cracker.addEventListener('click', () => {
+cracker.addEventListener('click', pressCracker)
+cracker.addEventListener('touchstart', pressCracker)
+
+function pressCracker() {
   if(counter < 13){
     counter++
   } else{
@@ -22,11 +25,12 @@ cracker.addEventListener('click', () => {
     jokeWrap.style.animation = "joke 2s forwards"
     cracker.style.transform = "scaleX(1)"
   }
-})
+}
 
 function Loop(){      
   window.requestAnimationFrame(Loop);
   if(counter > 0 && counter < 13){
+    console.log(cracker.style.transform)
     cracker.style.transform = `scaleX(${1 + (counter / 100)})`
     counter -= 0.05
   }

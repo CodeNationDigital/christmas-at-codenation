@@ -1,8 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap');
+
 body{
     margin: 0;
     overflow: hidden;
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 
+}
+#menu{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 30px;
+    border-radius: 15px;
+    border: 3px solid rgb(161, 1, 1);
+}
+h1{
+    margin: 0;
+    font-family: 'Pacifico', cursive;
+}
+p{
+    font-family: 'Montserrat', sans-serif;
+    margin: 30px 0;
+    width: 60%;
+}
+button{
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+    height: 50px;
+    width: 100px;
+    background-color: white;
+    color: red;
+    border: 3px solid rgb(161, 1, 1);
+    cursor: pointer;
+    border-radius: 5px;
 }
 canvas{
     background-color: rgb(218, 218, 218);
@@ -10,4 +48,47 @@ canvas{
 }
 img{
     display: none;
+}
+
+@media screen and (max-width: 600px) {
+    #menu{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
+        transform: translate(0%, 0%);
+        background-color: red;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        padding: 30px;
+        border-radius: 15px;
+        border: 3px solid rgb(161, 1, 1);
+    }
+    h1{
+        margin: 0;
+        font-family: 'Pacifico', cursive;
+    }
+    p{
+        font-family: 'Montserrat', sans-serif;
+        margin: 30px 0;
+        width: 90%;
+    }
+    button{
+        font-family: 'Pacifico', cursive;
+        text-transform: uppercase;
+        height: 80px;
+        width: 130px;
+        font-size: 20px;
+        background-color: white;
+        color: red;
+        border: 3px solid rgb(161, 1, 1);
+        cursor: pointer;
+        border-radius: 5px;
+    }
 }

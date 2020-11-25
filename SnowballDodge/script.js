@@ -1,5 +1,6 @@
-const canvas = document.querySelector('canvas')
-const c = canvas.getContext('2d')
+const menu = document.getElementById('menu');
+const canvas = document.querySelector('canvas');
+const c = canvas.getContext('2d');
 
 canvas.height = innerHeight;
 canvas.width = innerWidth;
@@ -9,6 +10,8 @@ let mouseY = 0
 let growing = false
 let radius = 10
 let santas = []
+let lives = 9
+let alive = false
 let projectiles = []
 let level = 1
 
@@ -25,6 +28,7 @@ window.addEventListener('mousemove', function(e){
 })
 window.addEventListener('mousedown', placeSanta)
 window.addEventListener('touchstart', function(e){
+    lives--
     mouseX = e.touches[0].clientX
     mouseY = e.touches[0].clientY
     growing = true
@@ -62,6 +66,7 @@ class Projectile {
     }
 }
 function placeSanta() {
+    lives--
     growing = true
     santas.push({ x: mouseX, y: mouseY, radius: radius, growing: true})
 }
@@ -72,13 +77,21 @@ function dropSanta() {
         growing = false
         radius = 10
     }
+    if(lives == 0){
+        alive = false
+    }
     return
 }
 
 function animate() {
-    requestAnimationFrame(animate);
 
     let score = 0
+
+    if(alive){
+        requestAnimationFrame(animate);
+    }else{
+        menu.style.display = "flex"
+    }
     
     for(i = 0; i < santas.length; i++){
         score += Math.PI * santas[i].radius * santas[i].radius
@@ -89,6 +102,7 @@ function animate() {
     }
 
     if((score/(innerWidth * innerHeight)) * 100 > 50){
+        lives = 8
         santas = []
         level++
         projectiles.push(new Projectile(Math.random() * innerWidth, Math.random() * innerHeight, 10, 'white', {x: (Math.random() - 0.5) * 4, y: (Math.random() - 0.5) * 4}))
@@ -133,7 +147,8 @@ function animate() {
     c.font = "20px Arial";
     c.fillStyle = "black";
     c.fillText(`Level: ${level}`, 50, 50);
-    c.fillText(`Score: ${Math.round((score/(innerWidth * innerHeight)) * 100)}%`, 50, 80);
+    c.fillText(`Santas Left: ${lives}`, 50, 80);
+    c.fillText(`Score: ${Math.round((score/(innerWidth * innerHeight)) * 100)}%`, 50, 110);
 
     for(let i = 0; i < projectiles.length; i++){
         // each projectile is i
@@ -174,5 +189,10 @@ window.addEventListener('resize', function() {
     init()
 })
 
-init()
-animate()
+function start() {
+    alive = true
+    lives = 8
+    menu.style.display = "none"
+    init()
+    animate()
+}

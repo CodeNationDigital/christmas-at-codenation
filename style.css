@@ -1,23 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
 html,
 body {
-  height: 100%;
-  width: 100%;
-  background-color: #060507;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: rgb(204,238,255);
+  background: linear-gradient(0deg, rgba(204,238,255,1) 0%, rgba(91,191,241,1) 100%);
 }
 
 body {
   margin: 0;
 }
 
+.titleWrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  animation: title 5s forwards;
+  z-index: -6;
+}
+/* @keyframes title {
+  0%{
+    height: 100vh;
+  }
+  50%{
+    height: 100vh
+  }
+  100%{
+    height: 30vh;
+  }
+} */
+.CNLogo{
+  width: 500px;
+}
+.title{
+  margin: 0;
+  font-size: 100px;
+  font-family: 'Great Vibes', cursive;
+  color: red;
+  text-shadow: 2px 2px white;
+}
+h3{
+  font-family: 'Great Vibes', cursive;
+  color: red;
+  margin: 0;
+  font-size: 30px;
+}
+
 .sky {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   color: #fff;
+  box-sizing: border-box;
   padding: 12px;
   font-family: Helvetica;
+  height: 70vh;
+  width: 100vw;
+  z-index: 3;
+  filter: drop-shadow(3px 2px rgb(104, 59, 0));
 }
 
 #canvas{
   position: absolute;
   top: 0px;
   left: 0px;
+}
+
+a{
+  margin: 5px;
+  padding: 15px 60px;
+  background-color: green;
+  text-align: center;
+  color:rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-weight: 900;
+  background-image: url("./images/wood.jpg");
+}
+.odd{
+  clip-path: polygon(100% 0%, 90% 50%, 100% 100%, 10% 100%, 0% 50%, 10% 0);
+}
+.even{
+  clip-path: polygon(90% 0, 100% 50%, 90% 100%, 0% 100%, 10% 50%, 0% 0%);
+}
+.pole{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  height: 70vh;
+  width: 30px;
+  background-image: url("./images/stripes.png");
+  background-size: 100px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  z-index: 3;
+}
+.pole:before{
+  content: '';
+  position: absolute;
+  height: 70vh;
+  width: 30px;
+  background: rgb(182,182,182);
+  background: linear-gradient(90deg, rgba(182,182,182,0.49763655462184875) 0%, rgba(255,255,255,0) 50%, rgba(91,91,91,0.604079131652661) 100%);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.ground1 {
+  position: absolute;
+  bottom: 0px;
+  height: 50px;
+  width: 100vw;
+  z-index: 4;
+}
+.ground2 {
+  position: absolute;
+  bottom: 0;
+  height: 90px;
+  width: 100vw;
+  animation: backSnow 5s forwards;
+}
+/* @keyframes backSnow {
+  0%{
+    bottom: -300px;
+  }
+  50%{
+    bottom: -300px;
+  }
+  100%{
+    bottom: 0px;
+  }
+} */
+
+@media screen and (max-width: 750px) {
+  .CNLogo{
+    margin: 0;
+    width: 80vw;
+  }
+  .title{
+    margin: 0;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    color: red;
+    text-shadow: 2px 2px white;
+    animation: gameTitle 5s forwards;
+  }
+  /* @keyframes gameTitle {
+    0%{
+      font-size: 100px;
+    }
+    50%{
+      font-size: 100px
+    }
+    100%{
+      font-size: 50px;
+    }
+  } */
+  a{
+    margin: 3px;
+    padding: 10px 60px;
+    background-color: green;
+    text-align: center;
+    color:rgb(255, 255, 255);
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    font-weight: 900;
+    background-image: url("./images/wood.jpg");
+  }
 }

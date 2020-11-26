@@ -108,3 +108,10 @@ window.addEventListener("resize", onResize, false);
 //   .onFinishChange(function () {
 //     requestAnimFrame(update);
 //   });
+
+
+const link = document.querySelectorAll('a')
+
+for(i = 0; i < link.length; i++){
+  link[i].style.transform = `rotate(${(Math.random() * 8) - 4}deg)`
+}

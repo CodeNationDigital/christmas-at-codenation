@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&family=Open+Sans&display=swap');
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    background-color: black;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h3{
+    font-size: 15px;
+    margin: 0;
+    font-family: 'Old Standard TT', serif;
+}
+#time{
+    margin: 0;
+    font-size: 35px;
+    font-family: 'Old Standard TT', serif;
+}
+#level{
+    margin: 0;
+    font-size: 25px;
+    font-family: 'Old Standard TT', serif;
+}
+.wantedPoster{
+    background-image: url('./images/wantedSign.png');
+    background-size: 120px;
+    height: 120px;
+    width: 120px;
+}
+#wantedImage{
+    height: 60px;
+    width: 60px;
+    margin: 40px 30px;
+}
+canvas{
+    background-color: black;
+    cursor: crosshair;
+}
+
+#menu{
+    position: absolute;
+    background-color: rgb(192, 151, 76);
+    border: 5px solid rgb(116, 79, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 700px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+#menu > h1{
+    margin: 0;
+    font-family: 'Old Standard TT', serif;
+}
+#menu > p{
+    margin: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+#menu > button{
+    font-family: 'Open Sans', sans-serif;
+    height: 50px;
+    width: 100px;
+    border: 5px solid rgb(116, 79, 0);
+    border-radius: 10px;
+}
+
+#points{
+    position: absolute;
+    transform-origin: center;
+    text-align: center;
+    font-size: 40px;
+    transform: translate(-50%, -200%);
+}
+
+@media screen and (max-width: 650px){
+    body{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        background-color: black;
+        overflow: hidden;
+    }
+    .wrap{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 10vh;
+    }
+    #menu{
+        position: absolute;
+        background-color: rgb(192, 151, 76);
+        border: 5px solid rgb(116, 79, 0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100vw;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+}

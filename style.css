@@ -55,11 +55,11 @@ h3{
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   color: #fff;
   box-sizing: border-box;
-  padding: 12px;
+  padding: 0px 0 40px 0;
   font-family: Helvetica;
   height: 70vh;
   width: 100vw;
@@ -74,8 +74,7 @@ h3{
 }
 
 a{
-  margin: 5px;
-  padding: 12px 60px;
+  padding: 8px 60px;
   background-color: green;
   text-align: center;
   color:rgb(255, 255, 255);

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Faster+One&family=Open+Sans&display=swap');
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: rgb(189,254,255);
+    background: linear-gradient(145deg, rgba(189,254,255,1) 0%, rgba(0,183,255,1) 53%, rgba(0,16,145,1) 100%);
+}
+canvas{
+    background-image: url('./images/winterBackground.jpeg');
+    background-size: 570px;
+    animation: move 10s linear infinite;
+}
+
+@keyframes move {
+    from{
+        background-position-x: 0px;
+    }
+    to{
+        background-position-x: -570px;
+    }
+}
+
+#button{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    font-size: 50px;
+    border-radius: 10px;
+    display: none;
+}
+h1{
+    font-family: 'Faster One', cursive;
+}
+h2{
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media screen and (max-width: 700px){
+    canvas{
+        background-image: url('./images/winterBackground.jpeg');
+        background-size: 570px;
+        animation: move 10s linear infinite;
+        transform: rotate(90deg);
+    }
+    #button{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        font-size: 50px;
+        border-radius: 10px;
+        display: none;
+        transform: rotate(90deg);
+    }
+    h1, h2{
+        display: none;
+    }
+}

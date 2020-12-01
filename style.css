@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
-html,
+
 body {
   height: 100vh;
   width: 100vw;
@@ -15,6 +15,7 @@ body {
 }
 
 .titleWrap{
+  margin: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,11 +36,12 @@ body {
   }
 } */
 .CNLogo{
-  width: 500px;
+  margin: 0;
+  width: 400px;
 }
 .title{
   margin: 0;
-  font-size: 100px;
+  font-size: 80px;
   font-family: 'Great Vibes', cursive;
   color: red;
   text-shadow: 2px 2px white;
@@ -59,7 +61,7 @@ h3{
   align-items: center;
   color: #fff;
   box-sizing: border-box;
-  padding: 0px 0 40px 0;
+  padding: 0px 0 80px 0;
   font-family: Helvetica;
   height: 70vh;
   width: 100vw;
@@ -74,7 +76,7 @@ h3{
 }
 
 a{
-  padding: 8px 60px;
+  padding: 6px 60px;
   background-color: green;
   text-align: center;
   color:rgb(255, 255, 255);
@@ -99,7 +101,7 @@ a{
   background-size: 100px;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
-  z-index: 3;
+  z-index: -3;
 }
 .pole:before{
   content: '';
@@ -139,13 +141,33 @@ a{
 } */
 
 @media screen and (max-width: 750px) {
+
+  body {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow: visible;
+    background: rgb(204,238,255);
+    background: linear-gradient( rgba(91,191,241,1), rgba(204,238,255,1));
+    background-attachment: fixed;
+  }
+  .titleWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 30vh;
+    box-sizing: border-box;
+    padding: 20px 0px 0px 0px;
+    animation: title 5s forwards;
+    z-index: -6;
+  }
   .CNLogo{
     margin: 0;
-    width: 80vw;
+    width: 250px;
   }
   .title{
     margin: 0;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     font-family: 'Great Vibes', cursive;
     color: red;
@@ -163,6 +185,43 @@ a{
       font-size: 50px;
     }
   } */
+  .sky {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 0px 0 80px 0;
+    font-family: Helvetica;
+    height: 800px;
+    width: 100vw;
+    z-index: 3;
+    filter: drop-shadow(3px 2px rgb(104, 59, 0));
+  }
+  .pole{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 100%;
+    width: 30px;
+    background-image: url("./images/stripes.png");
+    background-size: 100px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    z-index: -3;
+  }
+  .pole:before{
+    content: '';
+    position: absolute;
+    height: 70vh;
+    width: 30px;
+    background: rgb(182,182,182);
+    background: linear-gradient(90deg, rgba(182,182,182,0.49763655462184875) 0%, rgba(255,255,255,0) 50%, rgba(91,91,91,0.604079131652661) 100%);
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+  }
   a{
     margin: 3px;
     padding: 10px 60px;

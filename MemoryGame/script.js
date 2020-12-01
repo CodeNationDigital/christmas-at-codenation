@@ -83,9 +83,12 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 function gameReset(){
     for(i=0; i < cards.length; i++){
+        cards[i].addEventListener('click', flipCard)
         cards[i].classList.remove('flip')
     }
+
     moves = 0
+    pairs = 0
     score.textContent = moves
     setTimeout(() => {
         shuffle()

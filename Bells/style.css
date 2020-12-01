@@ -1,12 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap");
+
+body {
+  font-family: "Montserrat";
+}
+
 img {
   position: relative;
   right: 20px;
   height: 100px;
 }
 
+.title {
+  font-family: "Pacifico";
+  display: flex;
+  justify-content: center;
+  color: #e3c345;
+}
+
+h1 {
+  border-bottom: #876347 solid 2px;
+}
+
 .bell-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(5, 1fr); */
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -67,9 +87,19 @@ img {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 
   padding-top: 10px;
   margin-top: 10px;
+}
+
+.key {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+
+  background-color: #f3e262;
+  /* border-color: white; */
 }
 
 .press-key {
@@ -86,9 +116,23 @@ img {
 
 .buttons {
   display: flex;
-  width: 100%;
+  width: 300px;
+  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
 
   padding-top: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttons button {
+  padding: 10px;
+  margin: 5px;
+}
+
+button {
+  font-family: "Montserrat";
+  font-weight: bold;
 }

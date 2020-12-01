@@ -30,7 +30,6 @@ function pressCracker() {
 function Loop(){      
   window.requestAnimationFrame(Loop);
   if(counter > 0 && counter < 13){
-    console.log(cracker.style.transform)
     cracker.style.transform = `scaleX(${1 + (counter / 100)})`
     counter -= 0.05
   }

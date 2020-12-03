@@ -16,10 +16,12 @@ h1{
     color: red;
     text-align: center;
 }
-
+p{
+    font-size: 20px;
+    text-align: center;
+}
 #time{
-    width: 160px;
-    text-align: left;
+    text-align: center;
 }
 
 #canvas{
@@ -49,9 +51,23 @@ button{
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 100%;
         font-family: 'Luckiest Guy', cursive;
         overflow: hidden;
+        margin: 30px;
+    }
+    h1{
+        margin: 0;
+        font-size: 30px;
+        color: red;
+        text-align: center;
+    }
+    p{
+        font-size: 15px;
+        margin: 10px;
+    }
+    #time{
+        margin: 10px;
+        text-align: center;
     }
     #canvas{
         background-color: red;
@@ -67,8 +83,8 @@ button{
         font-size: 20px;
         line-height: 48px;
         color: white;
-        height: 100px;
-        width: 200px;
+        height: 80px;
+        width: 150px;
         margin: 15px;
     }
 }

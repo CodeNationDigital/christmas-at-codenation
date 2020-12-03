@@ -2,8 +2,8 @@
 
 body{
     background-color: var(--background-color);
-    background-size: cover;
     font-family: 'Mountains of Christmas', cursive;
+    margin: 0;
 }
 
 html {
@@ -350,4 +350,36 @@ path{
     border: 5px solid #353535;
     border-radius: 50%;
     z-index: -10;
+}
+
+.warning{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    background-color: brown;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 0px 30px;
+}
+
+@media screen and (max-width: 650px){
+    .warning{
+        position: absolute;
+        top: 50%;
+        transform: translate(0%, -50%);
+        background-color: brown;
+        height: 100vh;
+        width: 100vw;
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
 }

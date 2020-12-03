@@ -47,7 +47,7 @@ let level = 0
 let spawnedFaces = []
 
 function add() {
-    time.textContent = (seconds > 9 ? seconds : "0" + seconds);
+    time.textContent = (seconds > 9 ? seconds : ('0' + seconds).slice(-2));
 
     if(seconds <= 0){
         showMe()
@@ -81,26 +81,6 @@ canvas.addEventListener('click', (e) => {
     }
 })
 
-canvas.addEventListener('touchstart', function(e){
-    mouseX = e.touches[0].clientX - e.target.offsetLeft
-    mouseY = e.touches[0].clientY - e.target.offsetTop
-})
-canvas.addEventListener('touchend', function(e){
-    if(mouseX > wantedX && mouseX < wantedX + Xmin && mouseY > wantedY && mouseY < wantedY + Ymin){
-        seconds += 5
-        c.clearRect(0, 0, canvas.width, canvas.height);
-        faces.push(wanted[0]);
-        wanted = null;
-        spawnedFaces = []
-        fadeOut('+5');
-        spawn();
-    }else{
-        seconds -= 10
-        fadeOut('-10');
-    }
-    time.textContent = seconds
-})
-
 class Face {
     constructor(face, x, y, wanted) {
         this.face = face;
@@ -131,7 +111,6 @@ function spawn(){
     wantedY = Math.random() * (Ymax - Ymin) + Ymin;
 
     c.fillRect(wantedX, wantedY, Xmin, Ymin)
-    console.log(wantedX, wantedY)
 
     for(i = 0; i < 10 * level; i++){
         if(wnatedLoc == i){

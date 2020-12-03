@@ -16,6 +16,9 @@ section {
     width: 306px;
     margin: 30px auto;
 }
+h2{
+    font-size: 20px;
+}
 .cell {
     width: 100px;
     height: 100px;

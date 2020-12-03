@@ -3,6 +3,7 @@
 body{
     background-color: var(--background-color);
     font-family: 'Mountains of Christmas', cursive;
+    overflow: hidden;
     margin: 0;
 }
 

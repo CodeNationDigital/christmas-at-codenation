@@ -2,7 +2,6 @@ const time = document.getElementById("time")
 const canvas = document.getElementById('canvas');
 const c = canvas.getContext('2d');
 
-let milSec = 0;
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
@@ -11,18 +10,21 @@ let xClick = 0;
 let yClick = 0;
 let tileWidth = 200;
 let tileHeight = 200;
-let speed = 100
+let speed = 100;
+let smallScreen = false;
+let clickAllowed = true;
 
 if(window.screen.width < 600){
+    smallScreen = true;
     canvas.height = 330;
     canvas.width = 330;
     tileWidth = 110;
     tileHeight = 110;
     c.font = "20px 'Luckiest Guy'";
     c.textAlign = "center";
-    c.fillText('tap to see picture', 165, 145)
-    c.fillText('your time starts when', 165, 175)
-    c.fillText('you shuffle the cards', 165, 195)
+    c.fillText('tap to see the picture', 165, 145)
+    c.fillText('then shuffle the cards', 165, 175)
+    c.fillText('to start the game', 165, 195)
 } else{
     canvas.height = 600;
     canvas.width = 600;
@@ -30,9 +32,9 @@ if(window.screen.width < 600){
     tileHeight = 200;
     c.font = "30px 'Luckiest Guy'";
     c.textAlign = "center";
-    c.fillText('tap to see picture', 300, 280)
-    c.fillText('your time starts when', 300, 320)
-    c.fillText('you shuffle the cards', 300, 350)
+    c.fillText('tap to see the picture', 300, 280)
+    c.fillText('then shuffle the cards', 300, 320)
+    c.fillText('to start the game', 300, 350)
 }
 
 let santa = new Image();
@@ -69,27 +71,16 @@ let imageTile = [
 ]
 
 function add() {
-    milSec++;
-    if(milSec >= 99){
-    	milSec = 0;
-      seconds++;
-   		if (seconds >= 60) {
-     		seconds = 0;
+    seconds++;
+	if (seconds >= 60) {
+     	seconds = 0;
         minutes++;
         if (minutes >= 60) {
-          minutes = 0;
-        	hours++;
+            minutes = 0;
+            hours++;
         }
-    	}
     }
-    
-    time.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds) + ":" + (milSec > 9 ? milSec : "0" + milSec);
-
-    timer();
-}
-
-function timer() {
-    t = setTimeout(add, 10);
+    time.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
 }
 
 function gameLoop() {
@@ -103,11 +94,11 @@ function gameLoop() {
             }
         }
     }
-    console.log(totalInversions(tiles))
+ 
     if(totalInversions(tiles) == 0){
-        clearTimeout(t);
-        t = 0
+        clearInterval(t)
         c.drawImage(santa, imageTile[imageTile.length -1][0], imageTile[imageTile.length -1][1], 200, 200, tileWidth * 2, tileHeight * 2, tileWidth, tileHeight)
+        clickAllowed = false;
     }
 }
 
@@ -116,8 +107,8 @@ function shuffleArray() {
         const j = Math.floor(Math.random() * (i + 1));
         [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
     }
+    clickAllowed = true;
     shuffleCheck()
-    timer();
 }
 
 function totalInversions(arr) {
@@ -139,24 +130,24 @@ function shuffleCheck() {
             [tiles[0], tiles[1]] = [tiles[1], tiles[0]]
         }
     }
-    clearTimeout(t);
-    time.textContent = "00:00:00:00";
-    milSec = 0; seconds = 0; minutes = 0; hours = 0;
-    moves = 0
-    t = setTimeout(add, 10);
+    time.textContent = "00:00:00";
+    seconds = 0; minutes = 0; hours = 0;
+    moves = 0;
+    clearInterval(t)
+    t = setInterval(add, 1000)
     gameLoop()
 }
 
-canvas.addEventListener('click', function(e) {
-    xClick = e.x - canvas.offsetLeft 
-    yClick = e.y - canvas.offsetTop
-    click()
-})
-canvas.addEventListener('touchstart', function(e){
-    xClick = e.touches[0].clientX - e.target.getBoundingClientRect().left
-    yClick = e.touches[0].clientY - e.target.getBoundingClientRect().top
-    click()
-})
+canvas.addEventListener('click', handleClick)
+
+function handleClick(e){
+    if(clickAllowed){
+        xClick = e.x - canvas.offsetLeft 
+        yClick = e.y - canvas.offsetTop
+        click()
+    }
+}
+
 
 function click() {
     c.clearRect(0, 0, canvas.width, canvas.height)

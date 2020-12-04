@@ -115,6 +115,7 @@ function init() {
     alive = true
     trees = []
     zone = []
+    speed = 30;
     score = 0
     for(i = 0; i < 4; i++){
         trees.push(new Tree(i * innerWidth/4, (canvas.height - 64) - (innerWidth/4)))

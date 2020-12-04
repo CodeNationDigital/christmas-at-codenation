@@ -71,7 +71,7 @@ function spawnRandomObject() {
 
 loop = function() {
 
-    if(spawnRateOfDescent > 10){
+    if(spawnRateOfDescent > 20){
         if(timeSpeed > 500){
             timeSpeed -= 0.05
         }

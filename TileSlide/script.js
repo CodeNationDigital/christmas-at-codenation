@@ -107,6 +107,12 @@ function shuffleArray() {
         const j = Math.floor(Math.random() * (i + 1));
         [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
     }
+    if(!clickAllowed){
+        console.log('new time')
+        time.textContent = "00:00:00";
+        seconds = 0; minutes = 0; hours = 0;
+        t = setInterval(add, 1000)
+    }
     clickAllowed = true;
     shuffleCheck()
 }
@@ -130,11 +136,7 @@ function shuffleCheck() {
             [tiles[0], tiles[1]] = [tiles[1], tiles[0]]
         }
     }
-    time.textContent = "00:00:00";
-    seconds = 0; minutes = 0; hours = 0;
     moves = 0;
-    clearInterval(t)
-    t = setInterval(add, 1000)
     gameLoop()
 }
 

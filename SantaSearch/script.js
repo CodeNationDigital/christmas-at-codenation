@@ -161,11 +161,11 @@ function startGame() {
     sleighs = []
     if(level <= 3){
         for(i = 0; i < level; i++){
-            sleighs.push(new Sleigh((Math.random() * ((canvas.height - imageX - 40) - imageX + 40) + imageX + 40), (Math.random() * ((canvas.height - imageY - 40) - imageY + 40) + imageY + 40), (Math.random() + 4) - 2, (Math.random() + 4) - 2))
+            sleighs.push(new Sleigh((Math.random() * ((canvas.height - imageX - 80) - imageX + 80) + imageX + 80), (Math.random() * ((canvas.height - imageY - 80) - imageY + 80) + imageY + 80), (Math.random() + 4) - 2, (Math.random() + 4) - 2))
         }
     } else{
         for(i = 0; i < Math.ceil(Math.random() * 5); i++){
-            sleighs.push(new Sleigh((Math.random() * ((canvas.height - imageX - 40) - imageX + 40) + imageX + 40), (Math.random() * ((canvas.height - imageY - 40) - imageY + 40) + imageY + 40), (Math.random() + 4) - 2, (Math.random() + 4) - 2))
+            sleighs.push(new Sleigh((Math.random() * ((canvas.height - imageX - 80) - imageX + 80) + imageX + 80), (Math.random() * ((canvas.height - imageY - 80) - imageY + 80) + imageY + 80), (Math.random() + 4) - 2, (Math.random() + 4) - 2))
         }
         if(searchWidth > 5){
             searchWidth -= 1

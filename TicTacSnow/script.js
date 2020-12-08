@@ -141,7 +141,7 @@ function handleCellClick(clickedCellEvent) {
     handleResultValidation();
 
     // activate computers turn
-    if(player2){
+    if(player2 && gameActive){
         handleComputerPlay()
     }
 

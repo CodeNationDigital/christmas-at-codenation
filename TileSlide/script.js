@@ -20,20 +20,20 @@ if(window.screen.width < 600){
     canvas.width = 330;
     tileWidth = 110;
     tileHeight = 110;
-    c.font = "20px 'Luckiest Guy'";
+    c.font = "20px Arial";
     c.textAlign = "center";
-    c.fillText('tap to see the picture', 165, 145)
-    c.fillText('then shuffle the cards', 165, 175)
+    c.fillText('Tap to see the picture,', 165, 145)
+    c.fillText('Then shuffle the cards', 165, 175)
     c.fillText('to start the game', 165, 195)
 } else{
     canvas.height = 600;
     canvas.width = 600;
     tileWidth = 200;
     tileHeight = 200;
-    c.font = "30px 'Luckiest Guy'";
+    c.font = "30px Arial";
     c.textAlign = "center";
-    c.fillText('tap to see the picture', 300, 280)
-    c.fillText('then shuffle the cards', 300, 320)
+    c.fillText('Tap to see the picture,', 300, 280)
+    c.fillText('Then shuffle the cards', 300, 320)
     c.fillText('to start the game', 300, 350)
 }
 

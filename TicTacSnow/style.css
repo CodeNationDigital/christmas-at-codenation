@@ -1,8 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
 
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Light.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
 body {
     font-family: 'Sigmar One', cursive;
     background-color: #70eaff;
+    padding: 10px 0 0 0;
+}
+#CNLogo{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+  
+#CNLogo > img{
+    height: 5vh;
+    padding: 10px 20px;
 }
 section {
     text-align: center;
@@ -18,6 +46,10 @@ section {
 }
 h2{
     font-size: 20px;
+    font-family: 'Gilroy';
+}
+label{
+    font-family: 'Gilroy';
 }
 .cell {
     width: 100px;
@@ -97,4 +129,22 @@ h2{
     border-radius: 10px;
     color: white;
     font-family: 'Sigmar One', cursive;
+}
+
+@media screen and (max-width: 650px){
+    #CNLogo{
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        left: 0px;
+        top: 0;
+        transform: translateX(0%);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: 20;
+    }
+      
+    #CNLogo > img{
+        height: 15px;
+        padding: 5px 10px;
+    }
 }

@@ -1,11 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Pacifico&display=swap');
 
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Light.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
 body{
     margin: 0;
     overflow: hidden;
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
-
 }
+
+#CNLogo{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+  
+#CNLogo > img{
+    height: 5vh;
+    padding: 10px 20px;
+}
+
 #menu{
     position: absolute;
     top: 50%;
@@ -27,7 +55,7 @@ h1{
     font-family: 'Pacifico', cursive;
 }
 p{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Gilroy';
     margin: 30px 0;
     width: 60%;
 }
@@ -46,11 +74,23 @@ canvas{
     background-color: rgb(218, 218, 218);
     cursor: crosshair;
 }
-img{
-    display: none;
-}
 
 @media screen and (max-width: 600px) {
+    #CNLogo{
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        left: 0px;
+        top: 0;
+        transform: translateX(0%);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: 20;
+    }
+      
+    #CNLogo > img{
+        height: 15px;
+        padding: 5px 10px;
+    }
     #menu{
         position: absolute;
         top: 0;
@@ -75,7 +115,7 @@ img{
         font-family: 'Pacifico', cursive;
     }
     p{
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Gilroy';
         margin: 30px 0;
         width: 90%;
     }

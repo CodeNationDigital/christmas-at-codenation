@@ -1,8 +1,37 @@
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Light.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+  }
+
 body{
     margin: 0;
     overflow: hidden;
     cursor: default;
 }
+
+#CNLogo{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+  
+#CNLogo > img{
+    height: 5vh;
+    padding: 10px 20px;
+}
+
 .message{
     display: none;
 }
@@ -33,6 +62,7 @@ body{
     font-size: 60px;
 }
 .instructions{
+    font-family: 'Gilroy';
     padding: 0 80px;
     font-size: 30px;
 }
@@ -81,6 +111,10 @@ body{
 }
 
 @media screen and (orientation: portrait){
+    #CNLogo{
+        display: none;
+    }
+
     #axe{
         display: none;
     }
@@ -144,5 +178,20 @@ body{
         text-align: center;
         font-size: 40px;
         padding: 10px 20px;
+    }
+    #CNLogo{
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        left: 0px;
+        top: 0;
+        transform: translateX(0%);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: 20;
+    }
+      
+    #CNLogo > img{
+        height: 15px;
+        padding: 5px 10px;
     }
 }

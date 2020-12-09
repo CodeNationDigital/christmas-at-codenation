@@ -1,13 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Light.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+  }
+
 body{
     margin: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: 'Luckiest Guy', cursive;
+}
+
+#CNLogo{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+  
+#CNLogo > img{
+    height: 5vh;
+    padding: 10px 20px;
 }
 
 h1{
@@ -17,8 +45,10 @@ h1{
     text-align: center;
 }
 p{
+    font-family: 'Gilroy';
     font-size: 20px;
     text-align: center;
+    margin: 0;
 }
 #time{
     text-align: center;
@@ -29,6 +59,13 @@ p{
     border: 5px solid green;
     height: 600px;
     width: 600px;
+}
+.gameWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
 }
 
 button{
@@ -45,6 +82,21 @@ button{
 }
 
 @media screen and (max-width: 600px) {
+    #CNLogo{
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        left: 0px;
+        top: 0;
+        transform: translateX(0%);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        z-index: 20;
+    }
+          
+    #CNLogo > img{
+        height: 15px;
+        padding: 5px 10px;
+    }
     body{
         margin: 50px;
         display: flex;
@@ -65,6 +117,13 @@ button{
         font-size: 15px;
         margin: 10px;
     }
+    .gameWrap{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    }
     #time{
         margin: 10px;
         text-align: center;
@@ -81,9 +140,9 @@ button{
         border-radius: 5px;
         font-family: 'Luckiest Guy', cursive;
         font-size: 20px;
-        line-height: 48px;
+        line-height: 40px;
         color: white;
-        height: 80px;
+        height: 40px;
         width: 150px;
         margin: 15px;
     }

@@ -1,6 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/Gilroy-Light.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('./fonts/Gilroy-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
 
 body {
   height: 100vh;
@@ -21,20 +33,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 30vh;
-  animation: title 5s forwards;
   z-index: -6;
 }
-/* @keyframes title {
-  0%{
-    height: 100vh;
-  }
-  50%{
-    height: 100vh
-  }
-  100%{
-    height: 30vh;
-  }
-} */
 .CNLogo{
   margin: 0;
   width: 400px;
@@ -59,10 +59,8 @@ h3{
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  color: #fff;
   box-sizing: border-box;
   padding: 0px 0 80px 0;
-  font-family: Helvetica;
   height: 70vh;
   width: 100vw;
   z-index: 3;
@@ -78,11 +76,10 @@ h3{
 a{
   padding: 6px 60px;
   background-color: green;
+  font-family: 'Gilroy';
+  color: white;
   text-align: center;
-  color:rgb(255, 255, 255);
-  font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  font-weight: 900;
   background-image: url("./images/wood.jpg");
 }
 .odd{
@@ -126,19 +123,7 @@ a{
   bottom: 0;
   height: 90px;
   width: 100vw;
-  animation: backSnow 5s forwards;
 }
-/* @keyframes backSnow {
-  0%{
-    bottom: -300px;
-  }
-  50%{
-    bottom: -300px;
-  }
-  100%{
-    bottom: 0px;
-  }
-} */
 
 @media screen and (max-width: 750px) {
 
@@ -158,7 +143,6 @@ a{
     height: 30vh;
     box-sizing: border-box;
     padding: 20px 0px 0px 0px;
-    animation: title 5s forwards;
     z-index: -6;
   }
   .CNLogo{
@@ -172,29 +156,16 @@ a{
     font-family: 'Great Vibes', cursive;
     color: red;
     text-shadow: 2px 2px white;
-    animation: gameTitle 5s forwards;
   }
-  /* @keyframes gameTitle {
-    0%{
-      font-size: 100px;
-    }
-    50%{
-      font-size: 100px
-    }
-    100%{
-      font-size: 50px;
-    }
-  } */
+
   .sky {
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    color: #fff;
     box-sizing: border-box;
+    align-items: center;
     padding: 0px 0 80px 0;
-    font-family: Helvetica;
     height: 800px;
     width: 100vw;
     z-index: 3;
@@ -226,11 +197,10 @@ a{
     margin: 3px;
     padding: 10px 60px;
     background-color: green;
+    font-family: 'Gilroy';
+    color: white;
     text-align: center;
-    color:rgb(255, 255, 255);
-    font-family: 'Montserrat', sans-serif;
     text-decoration: none;
-    font-weight: 900;
     background-image: url("./images/wood.jpg");
   }
 }

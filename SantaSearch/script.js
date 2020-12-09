@@ -16,7 +16,7 @@ let level = 0;
 let t;
 let fadeCountdown;
 let searchWidth = 30;
-let sleighs = []
+let sleighs = [];
 
 let imageX = 80;
 let imageY = 50;
@@ -27,7 +27,7 @@ sleighLeft.src = './images/sleighLeft.png';
 let sleighRight = new Image();
 sleighRight.src = './images/sleighRight.png';
 
-if(innerHeight < 700){
+if(innerWidth < 700){
     canvas.width = innerWidth
     canvas.height = innerHeight * 0.8
     imageX = 60;
@@ -36,6 +36,12 @@ if(innerHeight < 700){
     canvas.width = 700
     canvas.height = 600
 }
+
+let Xmax = canvas.width - 80;
+let Xmin = canvas.offsetLeft + 80;
+
+let Ymax = canvas.height - 80;
+let Ymin = canvas.offsetTop + 80;
 
 function add() {
     time.textContent = 'Time ' + seconds;
@@ -123,9 +129,10 @@ canvas.addEventListener('mousemove', (e) => {
     search()
 })
 canvas.addEventListener('touchmove', (e) => {
-    console.log(e)
     newX = e.touches[0].clientX - canvas.offsetLeft
     newY = e.touches[0].clientY - canvas.offsetTop
+
+    console.log(sleighs[0].x, sleighs[0].y, newX, newY)
     search()
 })
 
@@ -161,11 +168,12 @@ function startGame() {
     sleighs = []
     if(level <= 3){
         for(i = 0; i < level; i++){
-            sleighs.push(new Sleigh((Math.random() * ((canvas.height - imageX - 80) - imageX + 80) + imageX + 80), (Math.random() * ((canvas.height - imageY - 80) - imageY + 80) + imageY + 80), (Math.random() + 8) - 4, (Math.random() + 8) - 4))
+            sleighs.push(new Sleigh((Math.floor(Math.random() * (Xmax - Xmin + 1)) + Xmin), (Math.floor(Math.random() * (Ymax - Ymin + 1)) + Ymin), (Math.random() + 8) - 4, (Math.random() + 8) - 4))
+            console.log(sleighs[i].x)
         }
     } else{
         for(i = 0; i < Math.ceil(Math.random() * 5); i++){
-            sleighs.push(new Sleigh((Math.random() * ((canvas.height - imageX - 80) - imageX + 80) + imageX + 80), (Math.random() * ((canvas.height - imageY - 80) - imageY + 80) + imageY + 80), (Math.random() + 8) - 4, (Math.random() + 8) - 4))
+            sleighs.push(new Sleigh((Math.floor(Math.random() * (Xmax - Xmin + 1)) + Xmin), (Math.floor(Math.random() * (Ymax - Ymin + 1)) + Ymin), (Math.random() + 8) - 4, (Math.random() + 8) - 4))
         }
         if(searchWidth > 5){
             searchWidth -= 1

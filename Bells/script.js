@@ -38,7 +38,7 @@ const bellPlaying = (bell, sound, key) => {
   bell.classList.toggle("ring-bell");
   //  Sounds
   sound.pause();
-  sound.currentTime = 0;
+  sound.currentTime = 0.2;
   sound.play();
   //  Remove styles
   setTimeout(() => {

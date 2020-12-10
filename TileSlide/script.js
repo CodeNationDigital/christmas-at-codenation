@@ -22,9 +22,10 @@ if(window.screen.width < 600){
     tileHeight = 110;
     c.font = "20px Arial";
     c.textAlign = "center";
-    c.fillText('Tap to see the picture,', 165, 145)
-    c.fillText('Then shuffle the cards', 165, 175)
-    c.fillText('to start the game', 165, 195)
+    c.fillText('Tap to see the picture,', 165, 105)
+    c.fillText('Then shuffle the cards', 165, 135)
+    c.fillText('to start the game', 165, 155)
+    c.fillText('CLICK HERE TO SEE IMAGE', 165, 195)
 } else{
     canvas.height = 600;
     canvas.width = 600;
@@ -32,9 +33,10 @@ if(window.screen.width < 600){
     tileHeight = 200;
     c.font = "30px Arial";
     c.textAlign = "center";
-    c.fillText('Tap to see the picture,', 300, 280)
-    c.fillText('Then shuffle the cards', 300, 320)
-    c.fillText('to start the game', 300, 350)
+    c.fillText('Tap to see the picture,', 300, 200)
+    c.fillText('Then shuffle the cards', 300, 240)
+    c.fillText('to start the game', 300, 270)
+    c.fillText('CLICK HERE TO SEE IMAGE', 300, 320)
 }
 
 let santa = new Image();

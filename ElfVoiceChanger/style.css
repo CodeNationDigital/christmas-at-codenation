@@ -397,6 +397,7 @@ path{
     z-index: 10;
     box-sizing: border-box;
     padding: 0px 30px;
+    z-index: 100;
 }
 
 @media screen and (max-width: 650px){
@@ -412,5 +413,6 @@ path{
         justify-content: center;
         align-items: center;
         margin: 0;
+        z-index: 100;
     }
 }

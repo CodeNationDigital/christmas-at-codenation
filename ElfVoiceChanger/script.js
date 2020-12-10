@@ -1,5 +1,7 @@
 let message = document.getElementById("recordedAudio")
 
+let warningMessage = document.getElementsByClassName('warning')[0]
+
 let mouth = document.getElementById("mouth")
 
 let audioCtx;
@@ -59,15 +61,20 @@ navigator.mediaDevices.getUserMedia({audio:true})
 .then(stream => {handlerFunction(stream)})
 
 function handlerFunction(stream) {
-  rec = new MediaRecorder(stream);
-  rec.ondataavailable = e => {
-    audioChunks.push(e.data);
-    if (rec.state == "inactive"){
-      let blob = new Blob(audioChunks,{type:'audio/mpeg-3'});
-      recordedAudio.src = URL.createObjectURL(blob);
-      recordedAudio.controls=false;
-      source=playSound(message.src, pitch=1.5);
+  try{
+    rec = new MediaRecorder(stream);
+    rec.ondataavailable = e => {
+      audioChunks.push(e.data);
+      if (rec.state == "inactive"){
+        let blob = new Blob(audioChunks,{type:'audio/mpeg-3'});
+        recordedAudio.src = URL.createObjectURL(blob);
+        recordedAudio.controls=false;
+        source=playSound(message.src, pitch=1.5);
+      }
     }
+  }
+  catch(err){
+    warningMessage.style.display = 'flex'
   }
 }
 

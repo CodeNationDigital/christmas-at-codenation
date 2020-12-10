@@ -19,11 +19,9 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     font-family: 'Courgette', cursive;
     background-image: url('./images/christmasBackground.jpg');
     background-size: 300px;
-    overflow: hidden;
 }
 
 #CNLogo{
@@ -89,12 +87,15 @@ h3{
     -webkit-perspective: 1000px;
 }
 .memory-card {
-    width: calc(25% - 2px);
-    height: calc(25% - 2px);
+    width: 158px;
+    height: 158px;
     margin: 1px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
     transition: transform .5s;
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
@@ -106,6 +107,8 @@ h3{
 .memory-card.flip {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
 }
 .front-face,
 .back-face {
@@ -116,10 +119,16 @@ h3{
   border-radius: 5px;
   background: #1C7CCC;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
 }
 
 .front-face {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
 }
 
 @media screen and (max-width: 600px){

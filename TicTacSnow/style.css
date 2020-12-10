@@ -16,7 +16,7 @@
 body {
     font-family: 'Sigmar One', cursive;
     background-color: #70eaff;
-    padding: 10px 0 0 0;
+    padding: 50px 0 0 0;
 }
 #CNLogo{
     background-color: rgb(255, 255, 255);
@@ -132,6 +132,11 @@ label{
 }
 
 @media screen and (max-width: 650px){
+    body {
+        font-family: 'Sigmar One', cursive;
+        background-color: #70eaff;
+        padding: 10px 0 0 0;
+    }
     #CNLogo{
         background-color: rgb(255, 255, 255);
         position: absolute;

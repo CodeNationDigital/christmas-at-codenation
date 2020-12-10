@@ -127,7 +127,7 @@ export const littleLamb = [
 ];
 
 export const jingle = [
-  {note: "e"},
+  "e",
   "e",
   "e",
   "e",

@@ -20,6 +20,21 @@ body{
     margin: 0;
 }
 
+#CNLogo{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    z-index: 100;
+  }
+  
+  #CNLogoImage{
+    height: 5vh;
+    padding: 10px 20px;
+  }
+
 html {
     --clothes: #4B8546;
     --gold: #FEC323;

@@ -1,4 +1,5 @@
 const time = document.getElementById("time")
+const button = document.getElementById("button")
 const canvas = document.getElementById('canvas');
 const c = canvas.getContext('2d');
 
@@ -15,7 +16,6 @@ let smallScreen = false;
 let clickAllowed = true;
 
 if(window.screen.width < 600){
-    smallScreen = true;
     canvas.height = 330;
     canvas.width = 330;
     tileWidth = 110;
@@ -143,6 +143,7 @@ function shuffleCheck() {
 canvas.addEventListener('click', handleClick)
 
 function handleClick(e){
+    button.style.display = 'block';
     if(clickAllowed){
         xClick = e.x - canvas.offsetLeft 
         yClick = e.y - canvas.offsetTop

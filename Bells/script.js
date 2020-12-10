@@ -70,43 +70,43 @@ keys.forEach((key) => {
 const logKey = (e) => {
   let note;
   switch (e.code) {
-    case "KeyA":
+    case "KeyO":
       note = "a-bb";
       break;
-    case "KeyS":
+    case "KeyK":
       note = "a";
       break;
-    case "KeyD":
+    case "KeyL":
       note = "b";
       break;
-    case "KeyF":
+    case "KeyW":
       note = "c-db";
       break;
     case "KeyR":
       note = "d-eb";
       break;
-    case "KeyC":
+    case "KeyD":
       note = "d";
       break;
-    case "KeyU":
+    case "KeyG":
       note = "e";
       break;
-    case "KeyN":
+    case "KeyU":
       note = "f-gb";
       break;
-    case "KeyJ":
+    case "KeyH":
       note = "f";
       break;
-    case "KeyK":
+    case "KeyI":
       note = "g-ab";
       break;
-    case "KeyL":
+    case "KeyJ":
       note = "g";
       break;
     case "Semicolon":
       note = "high-c";
       break;
-    case "Space":
+    case "KeyA":
       note = "low-c";
       break;
 

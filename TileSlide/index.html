@@ -7,15 +7,15 @@
     <title>Code Nation 12 Games of Christmas</title>
 </head>
 <body>
-    <div id="CNLogo">
-        <img src="../images/CNFullLogo.png" alt="Code Nation Logo">
-    </div>
+    <a id="CNLogo" href="../index.html">
+        <img id="CNLogoImage" src="../images/CNFullLogo.png" alt="Code Nation Logo">
+    </a>
 
     <div class="gameWrap">
         <h1>Tile Slide</h1>
         <p>Slide your tiles around the game board until you have arranged them to get the picture of Santa. <br> Tiles can be moved into the red square only, but hurry, the clock is ticking.</p>
         <h2 id="time">00:00:00</h2>
-        <button onclick="shuffleArray()">SHUFFLE</button>
+        <button id="button" onclick="shuffleArray()">SHUFFLE</button>
     </div>
 
     <canvas id="canvas"></canvas>

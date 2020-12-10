@@ -110,7 +110,6 @@ function shuffleArray() {
     if(!clickAllowed){
         console.log('new time')
         time.textContent = "00:00:00";
-        document.querySelector('h1').style.color = 'blue'
         seconds = 0; minutes = 0; hours = 0;
         t = setInterval(add, 1000)
     }
